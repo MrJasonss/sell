@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.27/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.27
+    port: 6379
+
+server:
+  context-path: /sell
+logging:
+  pattern:
+  console: "%d - %msg%n"
+  path: /var/log/tomcat/
+  file: /var/log/tomcat/sell.log
+  level:
+    com.imooc.LoggerTest: debug
+
+wechat:
+  # 微信公众号的ID  和密钥
+  mpAppId: wx60abbe492d8e7b2c
+  mpAppSecret: eb24305e864d96169b2481da38233a18
+
+#  openAppId: oPCvr5sYZX4l-GGpqgdDoStxD8i0
+  openAppId: wx3497cdf90a9f4907
+  openAppSecret: 154be282fc8d3892815eb8b52b51512b
+
+  mchId: 1536181981
+  mchKey: W5QkyeUSlOPwcvA7J3rbaPHoEUpYLP55
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://natapp.tcjyy.com/sell/pay/notify
+
+  templateId:
+    orderStatus: AjTwjoeGlvyn8W3pfd4aBVvSR4aRenW1r5ryeE2Xsho
+
+projectUrl:
+  wechatMpAuthorize: http://natapp.tcjyy.com
+  wechatOpenAuthorize: http://natapp.tcjyy.com
+  sell: http://natapp.tcjyy.com
